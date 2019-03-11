@@ -1,0 +1,51 @@
+body{
+   background-image:url(/ProyectoOficial01/imagenes/fondoProyecto.gif);
+}
+
+h1{
+    color: white;
+}
+
+button{
+    color: black;
+}
+.tablahome{
+    width: 100%;
+}
+.logotable{
+        width: 4px;
+    margin: 0 auto;
+}
+.imagenBanner{
+    width: 280px;
+    margin-top: 30px;
+}
+
+.azultabla{
+        background-color: #020e4f;
+}
+
+.buscadorHome{
+       height: 34px;  width: 100%;
+    /* padding-left: 33px; */
+    border-radius: 71px;
+    margin-top: 32px;
+}
+.iconobuscador{
+     
+               float: left;
+    color: #ccc;
+    /* left: 0; */
+    font-size: 16px;
+    /* right: 0; */
+    padding-left: 8px;
+    margin: 44px 0px 1px 5px;
+    position: absolute;
+    text-align: center;
+    width: 16px;
+    z-index: 3;
+}
+
+
+/******************Banner*****************/
+/*******************Fin Banner***********/

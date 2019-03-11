@@ -1,5 +1,5 @@
 body{
-    background-color:aquamarine;
+    background-image:url(/ProyectoOficial01/imagenes/fondoProyecto.gif);
 }
 
 h1{
@@ -10,8 +10,8 @@ h1{
 
 input[type=text],input[type=password], input[type=number]
 {
-    background-color: gray;
-    color:white;
+    background-color: lightgray;
+    color:black;
 }
 
 label{
@@ -19,7 +19,7 @@ label{
     font-size:24px;
     font-weight: bold;
 
-    color: black;
+    color: white;
     padding:4px;
 
 }

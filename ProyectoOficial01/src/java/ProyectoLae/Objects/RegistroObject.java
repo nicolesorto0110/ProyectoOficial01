@@ -1,6 +1,7 @@
-package Objects;
+package ProyectoLae.Objects;
 
 public class RegistroObject {
+
     
     private String m_strNombre;
     private String m_strApellido;
@@ -11,24 +12,27 @@ public class RegistroObject {
     private int m_iBirthDay;
     private String m_strContrasena;
     private String m_strConfirm;
-
-    public RegistroObject(String m_strNombre, String m_strApellido, String m_strEmail, String m_strGenero, int m_iBirthYear, int m_iBirthmonth, int m_iBirthDay, String m_strContrasena, String m_strConfirm) {
-        this.m_strNombre = m_strNombre;
-        this.m_strApellido = m_strApellido;
-        this.m_strEmail = m_strEmail;
-        this.m_strGenero = m_strGenero;
-        this.m_iBirthYear = m_iBirthYear;
-        this.m_iBirthmonth = m_iBirthmonth;
-        this.m_iBirthDay = m_iBirthDay;
-        this.m_strContrasena = m_strContrasena;
-        this.m_strConfirm = m_strConfirm;
+    
+    
+    public RegistroObject(String p_strNombre, String p_strApellido, String p_strEmail, String p_strGenero, int p_iBirthYear, int p_iBirthmonth, int p_iBirthDay, String p_strContrasena, String p_strConfirm) {
+        setNombre(p_strNombre);
+        setApellido(p_strApellido);
+        setEmail(p_strEmail);
+        setGenero(p_strGenero);
+        setBirthYear(p_iBirthYear);
+        setBirthmonth(p_iBirthmonth);
+        setBirthDay(p_iBirthDay);
+        setContrasena(p_strContrasena);
+        setConfirm(p_strConfirm);
+        
+    
     }
 
     public String getNombre() {
         return m_strNombre;
     }
 
-    public void setNombre(String p_strNombre) {
+    private void setNombre(String p_strNombre) {
         m_strNombre = p_strNombre;
     }
 
@@ -36,7 +40,7 @@ public class RegistroObject {
         return m_strApellido;
     }
 
-    public void setApellido(String p_strApellido) {
+    private void setApellido(String p_strApellido) {
         m_strApellido = p_strApellido;
     }
 
@@ -44,7 +48,7 @@ public class RegistroObject {
         return m_strEmail;
     }
 
-    public void setEmail(String p_strEmail) {
+    private void setEmail(String p_strEmail) {
         m_strEmail = p_strEmail;
     }
 
@@ -52,7 +56,7 @@ public class RegistroObject {
         return m_strGenero;
     }
 
-    public void setGenero(String p_strGenero) {
+    private void setGenero(String p_strGenero) {
         m_strGenero = p_strGenero;
     }
 
@@ -60,7 +64,7 @@ public class RegistroObject {
         return m_iBirthYear;
     }
 
-    public void setBirthYear(int p_iBirthYear) {
+    private void setBirthYear(int p_iBirthYear) {
         m_iBirthYear = p_iBirthYear;
     }
 
@@ -68,7 +72,7 @@ public class RegistroObject {
         return m_iBirthmonth;
     }
 
-    public void setBirthmonth(int p_iBirthmonth) {
+    private void setBirthmonth(int p_iBirthmonth) {
         m_iBirthmonth = p_iBirthmonth;
     }
 
@@ -76,7 +80,7 @@ public class RegistroObject {
         return m_iBirthDay;
     }
 
-    public void setBirthDay(int p_iBirthDay) {
+    private void setBirthDay(int p_iBirthDay) {
         m_iBirthDay = p_iBirthDay;
     }
 
@@ -84,7 +88,7 @@ public class RegistroObject {
         return m_strContrasena;
     }
 
-    public void setContrasena(String p_strContrasena) {
+    private void setContrasena(String p_strContrasena) {
         m_strContrasena = p_strContrasena;
     }
 
@@ -92,8 +96,10 @@ public class RegistroObject {
         return m_strConfirm;
     }
 
-    public void setConfirm(String p_strConfirm) {
+    private void setConfirm(String p_strConfirm) {
         m_strConfirm = p_strConfirm;
     }
     
 }
+
+    

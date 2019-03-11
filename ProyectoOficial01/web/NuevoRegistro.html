@@ -1,11 +1,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Nueva cuenta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="Style/StyleInicioyRegistro.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Crea una nueva cuenta</h1>
+        <br>
+        <form id="registrar" method="get" action="RegistroServlet">
+            <label>Nombres:</label> <br>
+            <input type="text" id="nombres" name="nombres"/>
+            <br><br>
+
+            <label>Apellidos:</label> <br>
+            <input type="text" id="apellidos" name="apellidos"/>
+            <br><br>
+
+            <label>Email:</label> <br>
+            <input type="text" id="email" name="email"/>
+            <br><br>
+            
+            <label>Género:</label><br>
+            <select>
+                <option value="Masculino">Masculino</option>
+                <option value="Femenino">Femenino</option>
+            </select>
+            <br><br>
+            
+            <label>Fecha de Nacimiento:</label>
+            <br>
+            <input type="number" id="birthday" name="birthday"> / 
+            <input type="number" id="birthmonth" name="birthmonth"> / 
+            <input type="number" id="birthtyear" name="birthyear">
+            <br><br>
+            
+            <label>Contraseña:</label> <br>
+            <input type="password" id="contrasena" name="contrasena"/>
+            <br><br>
+            
+            <label>Confirmar contraseña:</label> <br>
+            <input type="password" id="confirm" name="confirm"/>
+            <br><br>
+            
+            <input type="submit" id="registrar" name="registrar" value="Registrar"/>
+        </form>
     </body>
 </html>

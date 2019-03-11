@@ -1,0 +1,25 @@
+body{
+    background-color:aquamarine;
+}
+
+h1{
+    color:darkblue;
+    font-family:cursive;
+    
+}
+
+input[type=text],input[type=password], input[type=number]
+{
+    background-color: gray;
+    color:white;
+}
+
+label{
+    font-family:arial;
+    font-size:24px;
+    font-weight: bold;
+
+    color: black;
+    padding:4px;
+
+}

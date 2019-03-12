@@ -1,11 +1,10 @@
 body{
-    background-image:url(/ProyectoOficial01/imagenes/fondoProyecto.gif);
+    background-image: url(/ProyectoOficial01/imagenes/fondoProyecto.gif);
 }
 
 h1{
-    color:darkblue;
-    font-family:cursive;
-    
+    color: aliceblue;
+    font-family: arial;
 }
 
 input[type=text],input[type=password], input[type=number]
@@ -16,10 +15,10 @@ input[type=text],input[type=password], input[type=number]
 
 label{
     font-family:arial;
-    font-size:24px;
+    font-size:18px;
     font-weight: bold;
 
-    color: white;
+    color: aquamarine;
     padding:4px;
 
 }

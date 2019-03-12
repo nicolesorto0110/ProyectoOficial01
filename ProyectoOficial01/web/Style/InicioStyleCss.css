@@ -1,0 +1,25 @@
+body{
+    background-image:url(/ProyectoOficial01/imagenes/fondoProyecto.gif);
+}
+
+h1{
+    color: aliceblue;
+    font-family: arial;
+    
+}
+
+input[type=text],input[type=password], input[type=number]
+{
+    background-color: lightgray;
+    color:black;
+}
+
+label{
+    font-family:arial;
+    font-size:18px;
+    font-weight: bold;
+
+    color: aquamarine;
+    padding:4px;
+
+}

@@ -5,8 +5,7 @@ $(document).ready(function(){
                required: true
            },
            contrasena: {
-               required: true,
-               min: 8
+               required: true
           }
        }   
    });

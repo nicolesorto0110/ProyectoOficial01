@@ -1,5 +1,6 @@
 package PoyectoLae.servlets;
 
+import PoyectoLae.logic.RegistroLogic;
 import ProyectoLae.DatabaseX.DatabaseX;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -32,13 +33,27 @@ public class RegistroServlet extends HttpServlet {
             String strContrasena = request.getParameter("contrasena");
             String strConfirm = request.getParameter("confirm");
             String strUsername = request.getParameter("username");
+            String strTelefono = request.getParameter("telefono");
+            String strDireccionFisica = request.getParameter("direccionfisica");
+            String strCiudad = request.getParameter("ciudad");
+            String strDepartamento = request.getParameter("departamento");
             
-            int flag1=0;
-         
-           DatabaseX database = new DatabaseX();
-           int Cresult = database.executeNonQueryRows("INSERT INTO `proyectoprogra2oficial`.`usuario` (`usuario`, `contrasena`, `correo`) VALUES ('"+strUsername+"', '"+strContrasena+"', '"+strEmail+"');");
+      
+            String strFechaNacimiento = strAno+"-"+strMes+"-"+strDias;
+            
+            RegistroLogic logic = new RegistroLogic();
+            int iRows = logic.insertNuevoRegistro(strUsername, strContrasena, strEmail);
+            
+            int idd=logic.consultaIdUsername(strEmail);
+            int iRows2 = logic.insertNuevoRegistro2(idd, strNombres, strApellidos, strTelefono, strDireccionFisica, strCiudad, strDepartamento, strGenero, strFechaNacimiento);
+                            
+            
+            //int flag1=0;
+           //DatabaseX database = new DatabaseX();
+           
+           //int Cresult = database.executeNonQueryRows("INSERT INTO `proyectoprogra2oficial`.`usuario` (`usuario`, `contrasena`, `correo`) VALUES ('"+strUsername+"', '"+strContrasena+"', '"+strEmail+"');");
           //  String algo="INSERT INTO `proyectoprogra2oficial`.`usuario`(`id`,`usuario`,`contrasena`,`correo`) VALUES NULL,'"+strUsername+"','"+strContrasena+"','"+strEmail+"';";
- // int iRows5 = executeNonQueryRows(Cresult);
+          // int iRows5 = executeNonQueryRows(Cresult);
           /* String strUsername = "";
            String strContrasena = "";
 

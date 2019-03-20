@@ -9,8 +9,11 @@ h1{
 
 input[type=text],input[type=password], input[type=number]
 {
-    background-color: lightgray;
+    background-color: white;
     color:black;
+    height: 27px;
+    width: 220px;
+    border-radius: 10px;
 }
 
 label{
@@ -21,4 +24,53 @@ label{
     color: aquamarine;
     padding:4px;
 
+}
+select{
+     background-color: white;
+    color:black;
+       height: 33px;
+    width: 220px;
+    border-radius: 10px;
+}
+ 
+
+.myButtons {
+	-moz-box-shadow: 3px 5px 14px 0px #899599;
+	-webkit-box-shadow: 3px 5px 14px 0px #899599;
+	box-shadow: 3px 5px 14px 0px #899599;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #00fff7), color-stop(1, #090c63));
+	background:-moz-linear-gradient(top, #00fff7 5%, #090c63 100%);
+	background:-webkit-linear-gradient(top, #00fff7 5%, #090c63 100%);
+	background:-o-linear-gradient(top, #00fff7 5%, #090c63 100%);
+	background:-ms-linear-gradient(top, #00fff7 5%, #090c63 100%);
+	background:linear-gradient(to bottom, #00fff7 5%, #090c63 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00fff7', endColorstr='#090c63',GradientType=0);
+	background-color:#00fff7;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	border:1px solid #f0ebf0;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:17px;
+	font-weight:bold;
+	padding:8px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+.myButtons:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #090c63), color-stop(1, #00fff7));
+	background:-moz-linear-gradient(top, #090c63 5%, #00fff7 100%);
+	background:-webkit-linear-gradient(top, #090c63 5%, #00fff7 100%);
+	background:-o-linear-gradient(top, #090c63 5%, #00fff7 100%);
+	background:-ms-linear-gradient(top, #090c63 5%, #00fff7 100%);
+	background:linear-gradient(to bottom, #090c63 5%, #00fff7 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#090c63', endColorstr='#00fff7',GradientType=0);
+	background-color:#090c63;
+}
+.myButtons:active {
+	position:relative;
+	top:1px;
 }

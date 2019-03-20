@@ -4,35 +4,63 @@
         <title>Nueva cuenta</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="Style/RegistroStyleCss.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/RegistroStyleCss.css?v=3" rel="stylesheet" type="text/css"/>
+        <script src="Scripts/RegistroNuevoJavascript.js" type="text/javascript"></script>
     </head>
-    <body>
-        <h1>Crea una nueva cuenta</h1>
-        <br>
-        <form id="registrar" method="get" action="RegistroServlet">
-            <label>Nombres:</label> <br>
-            <input type="text" id="nombres" name="nombres"/>
-            <br><br>
+    <body>       
+        <table style="    width: 100%;
+">
+<tbody>
+<tr>
+    <td>
+        
+        
+        
+    <form id="registrar" method="get" action="RegistroServlet">
+<table style="margin:0 auto;
+    padding-top: 49px;">
+<tbody>
 
-            <label>Apellidos:</label> <br>
-            <input type="text" id="apellidos" name="apellidos"/>
-            <br><br>
+<tr>
+    <td colspan="2"> 
+        
+        <div align="center">
+        <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/inicio.png">
+        </div>
+        </td>
+       
+ 
+</tr>
+  <tr>
+<td><label>Nombres:</label> <br>
+            <input   type="text" id="nombres" name="nombres"/></td>
+<td> <label>Apellidos:</label> <br>
+            <input type="text" id="apellidos" name="apellidos"/></td>
 
-            <label>Email:</label> <br>
-            <input type="text" id="email" name="email"/>
-            <br><br>
-            
-            <label>Género:</label><br>
-            <select>
+</tr>
+
+<tr>
+    <td> <label>Nombre de Usuario:</label> <br>
+            <input type="text" id="username" name="username"/></td>
+</tr>
+
+<tr>
+<td><label>Email:</label> <br>
+            <input type="text" id="email" name="email"/>;</td>
+<td><label>Género:</label><br>
+            <select name="genero" id="genero">
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
-            </select>
-            <br><br>
-            
-            <label>Fecha de Nacimiento:</label>
+            </select></td>
+</tr>
+<tr>
+<td colspan="2"> <label>Fecha de Nacimiento:</label>
             <br>
             
-            <select>
+            
+            
+            
+            <select name="dias" id="dias" style="    width: 148px;">
                 <option value="1">01</option>
                 <option value="2">02</option>
                 <option value="3">03</option>
@@ -66,7 +94,7 @@
                 <option value="31">31</option>
             </select>
             
-            <select>
+            <select name="mes" id="mes" style="    width: 147px;">
                 <option value="Enero">Enero</option>
                 <option value="Febrero">Febrero</option>
                 <option value="Marzo">Marzo</option>
@@ -80,19 +108,71 @@
                 <option value="Noviembre">Noviembre</option>
                 <option value="Diciembre">Diciembre</option>
             </select>
-                
-            <input type="number" id="birthtyear" name="birthyear">
-            <br><br>
-            
-            <label>Contraseña:</label> <br>
-            <input type="password" id="contrasena" name="contrasena"/>
-            <br><br>
-            
-            <label>Confirmar contraseña:</label> <br>
-            <input type="password" id="confirm" name="confirm"/>
-            <br><br>
-            
-            <input type="submit" id="registro" name="registrar" value="Registrar"/>
-        </form>
+          
+            <select id="ano" name="ano" style="    width: 148px;">
+                <option value="1">01</option>
+                <option value="2">02</option>
+                <option value="3">03</option>
+                <option value="4">04</option>
+                <option value="5">05</option>
+                <option value="6">06</option>
+                <option value="7">07</option>
+                <option value="8">08</option>
+                <option value="9">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select></td>
+ 
+</tr>
+<tr>   
+<td> <label>Contraseña:</label> <br>
+            <input type="password" id="contrasena" name="contrasena"/></td>
+<td> <label>Confirmar contraseña:</label> <br>
+            <input type="password" id="confirm" name="confirm"/></td>
+</tr>
+<tr>
+ 
+    <td colspan="2" style="text-align: center;">  <!--<input type="submit" id="registro" name="registrar" value="Registrar"/>-->
+   
+     
+    <a style="     margin-top: 21px;   text-align: center;" onclick="registrar()" class="myButtons">Registrar</a>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+        
+        
+        
+        
+        
+    </td>
+</tr>
+</tbody>
+</table>
+        
+        
+        
+       
     </body>
 </html>

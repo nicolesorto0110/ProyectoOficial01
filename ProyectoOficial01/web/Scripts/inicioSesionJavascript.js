@@ -9,5 +9,8 @@ $(document).ready(function(){
           }
        }   
    });
+   $('#iniciobtn').click(function(){
+    $("#iniciar").submit();    
+  });
 });
 

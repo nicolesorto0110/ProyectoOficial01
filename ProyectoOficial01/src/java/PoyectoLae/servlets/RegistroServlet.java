@@ -47,30 +47,6 @@ public class RegistroServlet extends HttpServlet {
             int idd=logic.consultaIdUsername(strEmail);
             int iRows2 = logic.insertNuevoRegistro2(idd, strNombres, strApellidos, strTelefono, strDireccionFisica, strCiudad, strDepartamento, strGenero, strFechaNacimiento);
                             
-            
-            //int flag1=0;
-           //DatabaseX database = new DatabaseX();
-           
-           //int Cresult = database.executeNonQueryRows("INSERT INTO `proyectoprogra2oficial`.`usuario` (`usuario`, `contrasena`, `correo`) VALUES ('"+strUsername+"', '"+strContrasena+"', '"+strEmail+"');");
-          //  String algo="INSERT INTO `proyectoprogra2oficial`.`usuario`(`id`,`usuario`,`contrasena`,`correo`) VALUES NULL,'"+strUsername+"','"+strContrasena+"','"+strEmail+"';";
-          // int iRows5 = executeNonQueryRows(Cresult);
-          /* String strUsername = "";
-           String strContrasena = "";
-
-            if(Cresult != null){
-                try {
-                    while(Cresult.next()){
-                        flag1++;
-                        strUsername = Cresult.getString("usuario");
-                        strContrasena = Cresult.getString("contrasena");
-                          System.out.println("kkkkkkkkkkkkkkkkkkk");
-                    }
-                } catch (SQLException ex) {
-                    Logger.getLogger(InicioServlet.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }*/
-            
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

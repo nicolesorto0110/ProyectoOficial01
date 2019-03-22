@@ -1,3 +1,10 @@
+<%-- 
+    Document   : store
+    Created on : 03-22-2019, 09:57:15 AM
+    Author     : Nicole
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="Style/IndexStyleCss.css" rel="stylesheet" type="text/css"/>
+        <link href="Style/IndexStyleCss.css?v=1" rel="stylesheet" type="text/css"/>
         
     </head>
     <body>
@@ -125,89 +132,20 @@
                     <input  type="email" class="form-control buscardorHome" id="exampleInputEmail22" ></div>
                 </td>
                 </tr>
-
+                
+                
+                
+                
                 <tr>
                     
+                  
                     
-                    
-                    
-                    <!--fin del header-->
-                <td colspan="2">
-                    
-                    
-                   <!-- Banner IZQ -->    
-               <table class="logotable" style="       width: 427px;
-   
-    height: 305px;" >
-                    <tbody>
-                        <tr>
-                        <td>
+                    <td colspan="3">
                         
-                            <img style="    width: 460px;" class="bannerpromo" src="imagenes/50-off-banner-index.jpg" alt=""/>
-                            
-                        
-                        
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-                    
-                    
-                    
-                </td>
-                <td colspan="2" style="width: 50%;">
-
-               <!-- inicio del banner-->    
-               <table class="logotable" style="width: 427px; background-color: #7f0479; height: 266px;" >
-                    <tbody>
-                        <tr>
-                        <td>
-                        
-                        
-                            <h1 style=" color: white;   text-align: center;">¿No tienes cuenta? </h1> <br>
-                            <h1 style=" text-align: center;"><a href="NuevoRegistro.html" class="myButton">¡Regístrate!</a></h1>
-                            
-                        
-                        
-                        </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <!--Fin del banner-->
-
-                </td>
-                </tr>
-
-                <tr>
-                    <td colspan="4" style="    background-color: #848ff9;">
+                       <!-- Fin del Header-->   
                         
                         
                         
                         
-                          <table  style="     margin: 0 auto;" >
-                    <tbody>
-                        <tr>
-                        <td>
                         
-                        
-                            <h1 style=" font-size: 73px;color: white;text-align: center;">¡Promociones en toda<br> la tienda! </h1> <br>
-                           
-                            
-                        
-                        
-                        </td>
-                        </tr>
-                    </tbody>
-                </table> 
-                        
-                        
-                        
-                    </td>
-                </tr>
-            </tbody>
-        </table> 
-        
-     
-        
-    </body>
-</html>
+                   

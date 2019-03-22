@@ -29,7 +29,7 @@
                 <td colspan="2"> 
 
                     <div align="center">
-                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/inicio.png">
+                    <img style="  width: 415px;  height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/informacion_1.png">
                     </div>
                     </td>
 
@@ -208,12 +208,12 @@
         
         </td>
 <td><!-- columna de detalles-->
-  <table>
+  <table border "1">
 <tbody>
 <tr>
 
 <td colspan="3">   <div align="center">
-                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/inicio.png">
+                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/detalle_2.png">
                     </div></td>
 </tr>
 <tr>
@@ -223,8 +223,8 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><p>Total:</p></td>
-<td><p>$23.56</p></td>
+<td><p  style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
+<td><p class="detallesfont">$23.56</p></td>
 </tr>
 <tr>
 

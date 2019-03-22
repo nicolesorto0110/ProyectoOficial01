@@ -122,6 +122,15 @@ label{
     padding:4px;
 
 }
+p{
+    font-family:arial;
+    font-size:18px;
+    font-weight: bold;
+
+    color: aquamarine;
+    padding:4px;
+
+}
 select{
      background-color: white;
     color:black;
@@ -213,4 +222,10 @@ select{
 .myButtonn:active {
 	position:relative;
 	top:1px;
+}
+
+.detallesfont{
+    
+    color: white !important;
+    
 }

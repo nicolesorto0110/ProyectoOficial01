@@ -13,11 +13,68 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="Style/IndexStyleCss.css?v=1" rel="stylesheet" type="text/css"/>
-        
+        <link href="Style/IndexStyleCss.css?v=4" rel="stylesheet" type="text/css"/>
+        <script src="Scripts/scriptglobal.js?v=4" type="text/javascript"></script>
     </head>
     <body>
         
+        
+        <div id="carrito" name="carrito" style="    background-color: #ffffff5e;
+    z-index: 999;
+    display:none;
+    /* margin-top: 189px; */
+    height: 100%;
+    position: fixed;
+    width: 100%;">
+            <div style="width: 600px;
+    margin: 0 auto;">
+                <i onclick="cerrarCarrito();" style="padding-top: 63px;
+    margin-left: 600px;
+    position: absolute;
+    margin-top: -93px;
+    font-size: 33px;" class="far fa-times-circle"></i>
+            
+         
+            
+            <!-- columna de detalles-->
+  <table style="       background-color: #2c2727;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 63px;" border "1" >
+<tbody>
+<tr>
+
+<td colspan="3">   <div align="center">
+                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/detalle_2.png">
+                    </div></td>
+</tr>
+<tr>
+ 
+    <td colspan="2"><p class="detallesfont">Unos Alexanderes de peluche para llevar</p></td>
+    <td><p class="detallesfont">$23.56</p></td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><p class="detallesfont" style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
+<td><p class="detallesfont">$23.56</p></td>
+</tr>
+<tr>
+
+<td colspan="3">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+            </div>
+<!--fin de la onda esta-->
+            
+            
+            
+            
+            
+            
+            
+            
+        </div>   
         
         <table class="tablahome" border="0" >
             <tbody>
@@ -44,7 +101,7 @@
     margin-right: 10px;
     margin-top: -28px;
     width: 184px;">
-                    <i style="color: white;
+                    <i onclick="carritoOpen();" style="color: white;
     
     position: absolute;
     font-size: 25px;

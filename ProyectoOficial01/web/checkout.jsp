@@ -208,7 +208,11 @@
         
         </td>
 <td><!-- columna de detalles-->
-  <table border "1">
+  
+  <table style="       background-color: #2c2727;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 63px;" border "1" >
 <tbody>
 <tr>
 
@@ -219,20 +223,16 @@
 <tr>
  
     <td colspan="2"><p>Unos Alexanderes de peluche para llevar</p></td>
-    <td><p>$23.56</p></td>
+    <td><p  >$23.56</p></td>
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td><p  style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
-<td><p class="detallesfont">$23.56</p></td>
+<td><p   style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
+<td><p >$23.56</p></td>
 </tr>
 <tr>
 
 <td colspan="3">&nbsp;</td>
-</tr>
-</tbody>
-</table>
-<!--fin de la onda esta--></td>
 </tr>
 </tbody>
 </table>

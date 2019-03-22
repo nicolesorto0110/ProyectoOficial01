@@ -14,9 +14,9 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
         <link href="Style/IndexStyleCss.css?v=4" rel="stylesheet" type="text/css"/>
-        <script src="Scripts/scriptglobal.js?v=4" type="text/javascript"></script>
+        <script src="Scripts/scriptglobal.js?v=5" type="text/javascript"></script>
     </head>
-    <body>
+    <body onload="carritoCore();">
         
         
         <div id="carrito" name="carrito" style="    background-color: #ffffff5e;
@@ -35,45 +35,20 @@
     font-size: 33px;" class="far fa-times-circle"></i>
             
          
-            
+    <div id="cuerpoCheckout"></div>
             <!-- columna de detalles-->
-  <table style="       background-color: #2c2727;
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 63px;" border "1" >
-<tbody>
-<tr>
+<!-- aqui v la onda esa si la bonita-->
+       
 
-<td colspan="3">   <div align="center">
-                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/detalle_2.png">
-                    </div></td>
-</tr>
-<tr>
- 
-    <td colspan="2"><p class="detallesfont">Unos Alexanderes de peluche para llevar</p></td>
-    <td><p class="detallesfont">$23.56</p></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td><p class="detallesfont" style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
-<td><p class="detallesfont">$23.56</p></td>
-</tr>
-<tr>
 
-<td colspan="3">&nbsp;</td>
+
+<!--fin de la onda esta--></td>
 </tr>
 </tbody>
 </table>
             </div>
 <!--fin de la onda esta-->
-            
-            
-            
-            
-            
-            
-            
-            
+
         </div>   
         
         <table class="tablahome" border="0" >

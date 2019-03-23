@@ -4,16 +4,18 @@
  * and open the template in the editor.
  */
 
-
-
+//vector global
+  var checkoutDescription = ["Unos Alexanderes de peluche par llevar", "Suvenirs de chuchitos", "Cuadros de la osa babu!"];
+var checkoutPrecio = ["23.56", "12.50", "30"];
+ 
+var checkoutCantidades = [2, 3, 5];  
+ 
 
 
 
 
 function carritoCore(){
-  var checkoutDescription = ["Unos Alexanderes de peluche par llevar", "Suvenirs de chuchitos", "Cuadros de la osa babu!"];
-var checkoutPrecio = ["23.56", "12.50", "30"];
-var checkoutCantidades = ["2", "5", "30"];  
+
     
     var cuerpo="";
  var cantidad=checkoutDescription.length;
@@ -22,19 +24,67 @@ var checkoutCantidades = ["2", "5", "30"];
  for(i=0;i<cantidad;i++){
      
      
- cuerpo += "<tr><td><p>1</p></td><td><p>img</p></td><td colspan='2'><p class='detallesfont'>"+checkoutDescription[i]+"</p></td><td><p><i class='far fa-plus-square'></i></p></td><td><p class='detallesfont'>"+checkoutPrecio[i]+"</p></td><td><p><i class='far fa-minus-square'>\n\
-</i></p></td><td><p>$"+checkoutCantidades[i]+"</p></td></tr>";
+ cuerpo += "<tr><td><p>1</p></td><td><p>img</p></td><td colspan='2'><p class='detallesfont'>"+checkoutDescription[i]+"</p></td><td><p><i onclick='sum("+i+","+checkoutCantidades[i]+");' class='far fa-plus-square'></i></p></td><td><p class='detallesfont'>"+checkoutCantidades[i]+"</p></td><td><p><i  onclick='rest("+i+","+checkoutCantidades[i]+");' class='far fa-minus-square'>\n\
+</i></p></td><td><p>$"+calculoItem(i)+"</p></td></tr>";
      
      
      
     // alert(cuerpo);
      
  }
- cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$23.56</p></td></tr><tr><td colspan='8'>&nbsp;</td></tr></tbody></table>";
+ cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$"+totaleCarrito()+"</p></td></tr><tr><td colspan='8'>&nbsp;</td></tr></tbody></table>";
  document.getElementById("cuerpoCheckout").innerHTML = cuerpo;
     
 }
+function calculoItem(i){
+    if(checkoutCantidades[i]==1){
+        
+      return  checkoutPrecio[i];
+        
+    }else{
+      var sumo=  checkoutPrecio[i]*checkoutCantidades[i];
+    return  sumo.toFixed(2);
+    }
+    
+}
+function totaleCarrito(){
+        
+           var sumo= 0;
+ var cantidad=checkoutDescription.length;
+  for(i=0;i<cantidad;i++){
+      
+    sumo += checkoutPrecio[i]*checkoutCantidades[i];
+      
+  }
+  return sumo.toFixed(2);
+    
+}
+function sum(indice,cantidad){
+//alert("estas sumando en: "+indice);  
+//checkoutDescription[indice]="jo jo jo";
+var nuevoValor = cantidad+1;
+var nuevototal=cantidad*checkoutPrecio[indice];
+//checkoutPrecio[indice]=nuevototal.toFixed(2);
+checkoutCantidades[indice]=nuevoValor;
 
+
+//alert(indice);
+//checkoutDescription[indice]=nuevoValor;
+carritoCore();
+//alert(checkoutCantidades[indice]);
+    
+}
+function rest(indice,cantidad){
+  var nuevoValor = cantidad-1;
+  var nuevototal=cantidad*checkoutPrecio[indice];
+//checkoutPrecio[indice]=nuevototal.toFixed(2);;
+  //alert(indice);
+checkoutCantidades[indice]=nuevoValor;
+carritoCore();
+   // alert("estas restando en: "+indice);   
+    
+    
+}
 
 function carritoOpen(){
     

@@ -13,7 +13,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="Style/IndexStyleCss.css?v=4" rel="stylesheet" type="text/css"/>
+        <link href="Style/IndexStyleCss.css?v=5" rel="stylesheet" type="text/css"/>
         <script src="Scripts/scriptglobal.js?v=46" type="text/javascript"></script>
     </head>
     <body onload="carritoCore();">

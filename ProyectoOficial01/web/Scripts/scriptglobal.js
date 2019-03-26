@@ -4,6 +4,18 @@
  * and open the template in the editor.
  */
 
+
+//
+$(document).ready(function()
+{
+    $('#checkout').click(function(){
+    $("#formCheckout").submit();    
+  });
+});
+
+
+
+
 //vector global
   var checkoutDescription = ["Unos Alexanderes de peluche par llevar", "Suvenirs de chuchitos", "Cuadros de la osa babu!"];
 var checkoutPrecio = ["23.56", "12.50", "30"];
@@ -32,7 +44,7 @@ function carritoCore(){
     // alert(cuerpo);
      
  }
- cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$"+totaleCarrito()+"</p></td></tr><tr><td colspan='8'>&nbsp;</td></tr></tbody></table>";
+ cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$"+totaleCarrito()+"</p></td></tr><tr><td style='text-align: center;' colspan='8'> <form id='formCheckout' action='CheckoutServlet'><input type='hidden' id='descripcion' name='descripcion'></input><a  id='checkout' name='checkout' class='procederBtn'>Checkout</a></form></td></tr></tbody></table>";
  document.getElementById("cuerpoCheckout").innerHTML = cuerpo;
     
 }

@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <jsp:include page="header.jsp" /> 
 
 
@@ -171,6 +172,8 @@
 </tr>
 </tbody>
 </table>
+         
+      
 </form>
         
         
@@ -182,43 +185,69 @@
 </tbody>
 </table>
 
+  
+    <%
+           
+    //  String[] descripcion = request.getParameterValues("descripcion");
+ //for (int i = 0; i < descripcion.length; i++) {
+   //   out.print("<p>" + descripcion[i] + "</p>");
+   
+ 
+ 
+ 
+ 
+/*
 
+   for (int i = 0; i < descripcion .length; i++) {
+      String car = descripcion [i];
+      System.out.println("car name::"+car);
+   }
+            */%>
 
         
         </td>
 <td><!-- columna de detalles-->
   
-  <table style="       background-color: #2c2727;
-    width: 600px;
-    margin: 0 auto;
-    margin-top: 63px;" border "1" >
-<tbody>
-<tr>
+    
+    
+    
+       <script type="text/javascript">
+             
+             
+             
+             $(document).ready(function()
+{
+    
+    var cuerpo="";
+ var cantidad=checkoutDescription.length;
+ 
+ cuerpo += "<table style='background-color: #2c2727;width: 600px;margin: 0 auto;margin-top: 63px;' border '1' ><tbody><tr><td colspan='4'><div align='center'><img style=''    height: 113px;' class='imagenBanner' src='/ProyectoOficial01/imagenes/detalle_2.png'></div></td></tr>";
+ for(i=0;i<cantidad;i++){
+     
+     
+ cuerpo += "<tr><td><p>4</p></td><td  colspan='2'><p>"+checkoutDescription[i]+"</p></td><td><p  >$"+calculoItem(i)+"</p></td></tr>";
+     
+     
+     
+    // alert(cuerpo);
+     
+ }
+ cuerpo+="<tr><td>&nbsp;</td><td colspan='2'><p   style='      font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p >$"+totaleCarrito()+"</p></td></tr><tr><td colspan='4' style='text-align: center;'><a   class='procederBtn'>Proceder con la compra</a></td></tr></tbody></table>";
+ document.getElementById("jeje").innerHTML = cuerpo;
+   //alert(checkoutDescription);
+});
+         </script>
+         <div id="jeje"></div>
+    <br><br><br>
+  
 
-<td colspan="4">   <div align="center">
-                    <img style="    height: 113px;" class="imagenBanner" src="/ProyectoOficial01/imagenes/detalle_2.png">
-                    </div></td>
-</tr>
-<tr>
- <td><p>4</p></td>
-    <td  colspan="2"><p>Unos Alexanderes de peluche para llevar</p></td>
-    <td><p  >$23.56</p></td>
-</tr>
-<tr>
-<td>&nbsp;</td>
-<td colspan="2"><p   style="      font-size: 22px;  float: right;"><strong>Total:</strong></p></td>
-<td><p >$23.56</p></td>
-</tr>
-<tr>
 
-<td colspan="4">
 
-    <a style="float: right;" href="#" class="procederBtn">Proceder con la compra</a>
 
-</td>
-</tr>
-</tbody>
-</table>
+
+
+
+
 
 
 

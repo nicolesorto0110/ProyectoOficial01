@@ -20,15 +20,7 @@ public class CheckoutServlet extends HttpServlet
         {
        String[] myArray = request.getParameterValues("descripcion");
             
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>"+myArray[0]+"</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet "+myArray[0]+"</h1>");
-            out.println("</body>");
-            out.println("</html>");
+             response.sendRedirect("checkout.jsp");
         }
     }
 

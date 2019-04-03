@@ -32,7 +32,7 @@
                 <td colspan="2" style="width: 50%;">
 
                <!-- inicio del banner-->    
-               <table class="logotable" style="width: 427px; background-color: #7f0479; height: 266px;" >
+               <table class="logotable" style="width: 427px; background-color: #7f0479; height: 266px;margin-right: 220px;" >
                     <tbody>
                         <tr>
                         <td>

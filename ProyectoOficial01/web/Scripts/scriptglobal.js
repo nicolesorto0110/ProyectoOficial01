@@ -5,11 +5,28 @@
  */
 
 
+function generalert(){
+    
+    alert("si funcionara!");
+    
+    
+}
+
+
+function agarralo(){
+    
+    $("#formCheckout").submit(); 
+   // alert("hoooooooo");
+}
+
 //
 $(document).ready(function()
 {
-    $('#checkout').click(function(){
-    $("#formCheckout").submit();    
+    $('#checkout2').click(function(){
+        
+        alert("yooooooo");
+        
+    //$("#formCheckout").submit();    
   });
 });
 
@@ -32,19 +49,32 @@ function carritoCore(){
     var cuerpo="";
  var cantidad=checkoutDescription.length;
  
- cuerpo += "<table style='background-color: #2c2727;width: 600px;margin: 0 auto;margin-top: 63px;' border '1'><tbody><tr><td colspan='8'>   <div align='center'><img style='    height: 113px;' class='imagenBanner' src='/ProyectoOficial01/imagenes/detalle_2.png'> </div></td></tr>";
- for(i=0;i<cantidad;i++){
+ cuerpo += "<table style='background-color: #2c2727;width: 600px;\n\
+margin: 0 auto;margin-top: 63px;' border '1'><tbody><tr><td colspan='8'>   \n\
+<div align='center'><img style='    height: 113px;' class='imagenBanner' \n\
+src='/ProyectoOficial01/imagenes/detalle_2.png'> </div></td></tr>";
+ 
+    for(i=0;i<cantidad;i++)
+    {
+        cuerpo += "<tr><td><p>1</p></td><td><p>img</p></td><td colspan='2'>\n\
+        <p class='detallesfont'>"+checkoutDescription[i]+"</p></td><td><p>\n\
+        <i onclick='sum("+i+","+checkoutCantidades[i]+");' class='far fa-plus-square'></i></p>\n\
+        </td><td><p class='detallesfont'>"+checkoutCantidades[i]+"</p></td>\n\
+        <td><p><i  onclick='rest("+i+","+checkoutCantidades[i]+");' class='far fa-minus-square'>\n\
+        </i></p></td><td><p>$"+calculoItem(i)+"</p></td></tr>";
+     }
      
      
- cuerpo += "<tr><td><p>1</p></td><td><p>img</p></td><td colspan='2'><p class='detallesfont'>"+checkoutDescription[i]+"</p></td><td><p><i onclick='sum("+i+","+checkoutCantidades[i]+");' class='far fa-plus-square'></i></p></td><td><p class='detallesfont'>"+checkoutCantidades[i]+"</p></td><td><p><i  onclick='rest("+i+","+checkoutCantidades[i]+");' class='far fa-minus-square'>\n\
-</i></p></td><td><p>$"+calculoItem(i)+"</p></td></tr>";
-     
-     
-     
-    // alert(cuerpo);
-     
- }
- cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$"+totaleCarrito()+"</p></td></tr><tr><td style='text-align: center;' colspan='8'> <form id='formCheckout' action='CheckoutServlet'><input type='hidden' id='descripcion' name='descripcion'></input><a  id='checkout' name='checkout' class='procederBtn'>Checkout</a></form></td></tr></tbody></table>";
+ cuerpo+="<tr><td colspan='7'><p class='detallesfont' style=''font-size: 22px; \n\
+ float: right;'><strong>Total:</strong></p></td><td><p class='detallesfont'>$"+totaleCarrito()+"</p></td>\n\
+</tr><tr><td style='text-align: center;' colspan='8'> \n\
+\n\
+<form id='formCheckout' action='CheckoutServlet'>\n\
+<input type='hidden' id='descripcion' name='descripcion' value='"+checkoutDescription+"'></input>\n\
+\n\<input type='hidden' id='descripcion' name='descripcion' value='"+checkoutPrecio+"'></input>\n\
+\n\<input type='hidden' id='precio' name='precio' value='"+checkoutCantidades+"'></input>\n\
+<a onclick='agarralo();'  id='cantidades' name='cantidades' \n\
+class='procederBtn'>Checkout</a></form></td></tr></tbody></table>";
  document.getElementById("cuerpoCheckout").innerHTML = cuerpo;
     
 }
@@ -86,6 +116,7 @@ carritoCore();
 //alert(checkoutCantidades[indice]);
     
 }
+
 function rest(indice,cantidad){
   var nuevoValor = cantidad-1;
   var nuevototal=cantidad*checkoutPrecio[indice];

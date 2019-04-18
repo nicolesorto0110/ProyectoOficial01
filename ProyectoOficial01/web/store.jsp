@@ -1,8 +1,4 @@
-<%-- 
-    Document   : store
-    Created on : 04-01-2019, 03:35:07 PM
-    Author     : Freddy
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
       <jsp:include page="header.jsp" /> 
@@ -31,7 +27,7 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td style="text-align: center;"><a style="" href="#" class="myButtonn">Iniciar Sesión</a></td>
+<td style="text-align: center;"><a style="" href="#" class="myButtonn">Ver detalles</a></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
@@ -59,7 +55,7 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td style="text-align: center;"><a style="  " href="#" class="myButtonn">Iniciar Sesión</a></td>
+<td style="text-align: center;"><a style="  " href="#" class="myButtonn">Ver detalles</a></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>
@@ -89,7 +85,7 @@
 </tr>
 <tr>
 <td>&nbsp;</td>
-<td style="text-align: center;"><a style=" " href="#" class="myButtonn">Iniciar Sesión</a></td>
+<td style="text-align: center;"><a style=" " href="#" class="myButtonn">Ver detalles </a></td>
 <td>&nbsp;</td>
 </tr>
 </tbody>

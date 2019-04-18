@@ -81,7 +81,7 @@
 </tr>
 
 <tr>   
-    <td> <label>Nombre de Tarjeta</label> <br>
+    <td> <label>Numero de Tarjeta</label> <br>
             <input type="password" id="contrasena" name="contrasena"/>
     </td>
     <td> <label>Tipo de Tarjeta:</label> <br>

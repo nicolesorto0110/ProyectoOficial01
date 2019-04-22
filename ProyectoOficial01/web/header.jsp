@@ -51,7 +51,7 @@
             {
                 //inicializo los vectores para agregarlos
            %>
-               var checkoutDescription = [];
+  var checkoutDescription = [];
 var checkoutPrecio = [];
  
 var checkoutCantidades = [];  
@@ -69,7 +69,7 @@ var ids = [];
                     
 
                    %>
-                        checkoutPrecio.push('<%= CTemp.getM_precio() %>');
+                        checkoutPrecio.push('<%= CTemp.getM_precio() %>'); //push sirve para agregar info al array
                         
                        checkoutDescription.push('<%= CTemp.getM_nombreProducto()%>');
                       
@@ -88,7 +88,6 @@ var ids = [];
     %> 
 var checkoutDescription = ["Unos Alexanderes de peluche par llevar", "Suvenirs de chuchitos", "Cuadros de la osa babu!"];
 var checkoutPrecio = ["23.56", "12.50", "30"];
- 
 var checkoutCantidades = [2, 3, 5]; 
 var ids = [1, 2, 3]; 
  
@@ -100,9 +99,8 @@ var ids = [1, 2, 3];
 }  else{
 
 %>
-  var checkoutDescription = [];
+var checkoutDescription = [];
 var checkoutPrecio = [];
- 
 var checkoutCantidades = [];    
     <%
 

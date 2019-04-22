@@ -119,7 +119,7 @@ $(document).ready(function()
 function carritoCore(){
 
     
-    var cuerpo="";
+ var cuerpo="";
  var cantidad=checkoutDescription.length;
  
  cuerpo += "<table style='background-color: #2c2727;width: 600px;\n\

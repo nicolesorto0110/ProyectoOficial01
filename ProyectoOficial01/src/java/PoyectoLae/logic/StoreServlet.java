@@ -230,7 +230,7 @@ String strSql = "select * from store.producto sp inner join store.categoria sc w
         
         //select * from travelsys.client;
           DatabaseX database = getDatabase();
-String strSql = "select * from store.producto sp inner join store.categoria sc where sp.idSubcategoria=sc.id and categoria LIKE '%"+variable+"%' or Descripcion LIKE '%"+variable+"%' or NombreProducto LIKE '%"+variable+"%'";
+String strSql = "select * from store.producto sp inner join store.categoria sc where sp.idSubcategoria=sc.id and NombreProducto LIKE '%"+variable+"%'  ";
         System.out.println(strSql);
         ResultSet CResult = database.executeQuery(strSql);
         ArrayList<StoreObjetos> CArray = null;

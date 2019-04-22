@@ -8,6 +8,15 @@ h1{
     
 }
 
+.do{
+      background-color: white;
+    color:black;
+    height: 27px;
+    width: 220px;
+    border-radius: 10px;  
+    
+}
+
 input[type=text],input[type=password], input[type=number]
 {
     background-color: white;

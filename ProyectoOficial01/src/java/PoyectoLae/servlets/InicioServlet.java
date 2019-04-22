@@ -28,32 +28,40 @@ public class InicioServlet extends HttpServlet {
             String iddLogu = logic.inicioSesion(strUsername, strContrasena);
        
        
-       if(iddLogu == ""){
-         System.out.println(strContrasena);
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet InicioServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet InicioServlet at " + request.getContextPath() + "</h1>");
-           out.println("<h1>hahahahaha valiste madre putito</h1>");
-            out.println("</body>");
-            out.println("</html>");
+       if(iddLogu == null||iddLogu == ""){
+  
+
+                 //  request.getSession().setAttribute("user", strUsername);
+              response.sendRedirect("NuevoRegistro.html"); 
        
-       }else{
-         System.out.println(strContrasena);
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet InicioServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet InicioServlet at " + request.getContextPath() + "</h1>");
-            out.println("<h1>usuario es: " + strUsername + "</h1>");
-            out.println("<h1>contraseña es: " + strContrasena + "</h1><br><br>");
-            out.println("</body>");
-            out.println("</html>");}
+       }else{ 
+           
+           
+ 
+         
+           
+           
+       String nombre = logic.obtenerNombre(iddLogu);
+       String apellidoUser = logic.obtenerApellido(iddLogu);
+        String emailUser = logic.obtenerEmail(iddLogu);
+         String direccionUser = logic.obtenerDireccion(iddLogu);
+          String ciudadUser = logic.obtenerCiudad(iddLogu);
+           String departamentoUser = logic.obtenerDepto(iddLogu);
+       
+        request.getSession().setAttribute("nombreUsr", nombre);
+        
+                request.getSession().setAttribute("direccionUser", direccionUser);
+                        request.getSession().setAttribute("apellidoUser", apellidoUser);
+                                request.getSession().setAttribute("emailUser", emailUser);
+                                        request.getSession().setAttribute("ciudadUser", ciudadUser);
+                                                request.getSession().setAttribute("departamentoUser", departamentoUser);
+                        
+                             request.getSession().setAttribute("user", iddLogu);
+              response.sendRedirect("index.jsp");
+       
+       
+       
+       }
             
      
         }

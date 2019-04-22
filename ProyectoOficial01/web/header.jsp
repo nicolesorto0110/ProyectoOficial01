@@ -4,7 +4,20 @@
     Author     : Nicole
 --%>
 
+<%@page import="ProyectoLae.Objects.carritoObjeto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+
+<%@page import="java.util.Iterator"%>
+ 
+ <%@page import="ProyectoLae.Objects.StoreObjetos"%>
+<%@page import="java.util.ArrayList"%>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +28,105 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" 
               
               integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <link href="Style/IndexStyleCss.css?v=6" rel="stylesheet" type="text/css"/>
-        <script src="Scripts/scriptglobal.js?v=54" type="text/javascript"></script>
+        <link href="Style/IndexStyleCss.css?v=12" rel="stylesheet" type="text/css"/>
+        <script src="Scripts/scriptglobal.js?v=80" type="text/javascript"></script>
+        
+             <script type="text/javascript">
+      
+      
+             <%
+        ArrayList<carritoObjeto> CArray = 
+                (ArrayList<carritoObjeto>)request.getSession().getAttribute("carritoo");
+        
+        
+        if(CArray!=null){
+        
+        Iterator<carritoObjeto> iteArray = CArray.iterator();
+        
+
+
+
+
+ if(iteArray!=null)
+            {
+                //inicializo los vectores para agregarlos
+           %>
+               var checkoutDescription = [];
+var checkoutPrecio = [];
+ 
+var checkoutCantidades = [];  
+var ids = [];                
+               <%
+                
+                
+                
+                
+                
+                carritoObjeto CTemp;
+                while(iteArray.hasNext())
+                {
+                    CTemp = iteArray.next();
+                    
+
+                   %>
+                        checkoutPrecio.push('<%= CTemp.getM_precio() %>');
+                        
+                       checkoutDescription.push('<%= CTemp.getM_nombreProducto()%>');
+                      
+                       checkoutCantidades.push('<%= CTemp.getM_cantidad() %>');
+                       ids.push('<%= CTemp.getId()%>');
+                       <%
+                    
+                }
+                
+            }else{
+ 
+ 
+ 
+ 
+
+    %> 
+var checkoutDescription = ["Unos Alexanderes de peluche par llevar", "Suvenirs de chuchitos", "Cuadros de la osa babu!"];
+var checkoutPrecio = ["23.56", "12.50", "30"];
+ 
+var checkoutCantidades = [2, 3, 5]; 
+var ids = [1, 2, 3]; 
+ 
+      
+                 <%
+                }     
+                     
+                     
+}  else{
+
+%>
+  var checkoutDescription = [];
+var checkoutPrecio = [];
+ 
+var checkoutCantidades = [];    
+    <%
+
+} 
+              // int iRows = (int)request.getSession().getAttribute("rows");       
+//if(){
+
+
+
+//}
+
+
+                   %>  
+                     
+                     
+             
+             
+             
+             </script>
+        
+        
+        
+        
+        
     </head>
     <body onload="carritoCore();">
         
@@ -61,18 +171,32 @@
                 <table class="logotable" >
                     <tbody>
                         <tr>
-                        <td> <img class="imagenBanner" src="/ProyectoOficial01/imagenes/inicio.png">
+                        <td> <a href="index.jsp"> <img class="imagenBanner" src="/ProyectoOficial01/imagenes/inicio.png">
+                        
+                            </a>
                         
                         
-                        
-                        
-                       
+                           
                         </td>
                         </tr>
                     </tbody>
                 </table>
+                <% 
+String nombreUsr = (String)request.getSession().getAttribute("nombreUsr");    
+                if(nombreUsr!=null){
                 
                 
+                
+                %>
+                <div style="    position: absolute;
+    margin-left: 30px;
+    margin-top: -126px;
+    color: white;
+    font-size: 25px;">Hola <%=nombreUsr%>!</div>
+    
+    <%
+    }
+    %>
                 <div style="    float: right;
     margin-bottom: 10px;
     margin-right: 10px;
@@ -81,9 +205,12 @@
                     <i onclick="carritoOpen();" style="color: white;
     
     position: absolute;
-    font-size: 25px;
+    font-size: 25px;<%
+    
+       String iRows = (String)request.getSession().getAttribute("user");
+    %>
     margin-top: 9px;
-    margin-right: 13px;" class="fas fa-shopping-cart"></i> <a style="   float: right;" href="InicioSesion.html" class="myButtonn">Iniciar Sesión</a>
+    margin-right: 13px;" class="fas fa-shopping-cart"></i> <a style="   float: right;" href="InicioSesion.html" class="myButtonn">Iniciar Sesión </a>
                 </div>
                 
                 
@@ -102,68 +229,84 @@
                       <ul>
                        <li><a href="">Tecnología</a>
                             <ul>
-                               <li><a href="/ProyectoOficial01/store?producto=computadoras">Computadores</a></li>
-                               <li><a href="">Tablets</a></li>
-                               <li><a href="">Telefonos</a></li>
-                               <li><a href="">Accesorios</a></li>
+                               <li><a href="storeServlet?producto=computadoras&strFormId=0">Computadores</a></li>
+                               <li><a href="storeServlet?producto=tablets">Tablets</a></li>
+                               <li><a href="storeServlet?producto=telefonos">Telefonos</a></li>
+                               <li><a href="storeServlet?producto=accesorios">Accesorios</a></li>
                             </ul>
                         </li>
-                       <li><a href="">Ropa</a>
+                       <li><a href="storeServlet?producto=ropa">Ropa</a>
                             <ul>
-                               <li><a href="">Damas</a>
+                               <li><a href="storeServlet?producto=damas">Damas</a>
                                     <ul>
-                                        <li><a href="">Blusas</a></li>
-                                        <li><a href="">Faldas</a></li>
-                                        <li><a href="">Pantalones</a></li>
+                                        <li><a href="storeServlet?producto=blusas">Blusas</a></li>
+                                        <li><a href="storeServlet?producto=faldas">Faldas</a></li>
+                                        <li><a href="storeServlet?producto=pantalones">Pantalones</a></li>
                                     </ul>
                                </li>
-                               <li><a href="">Caballeros</a>
+                               <li><a href="storeServlet?producto=caballeros">Caballeros</a>
                                     <ul>
-                                        <li><a href="">Camisas</a></li>
-                                        <li><a href="">Shorts</a></li>
-                                        <li><a href="">Pantalones</a></li>
+                                        <li><a href="storeServlet?producto=camisas">Camisas</a></li>
+                                        <li><a href="storeServlet?producto=shorts">Shorts</a></li>
+                                        <li><a href="storeServlet?producto=pantalones">Pantalones</a></li>
                                     </ul>
                                </li>
-                               <li><a href="">Jóvenes</a>
+                               <li><a href="storeServlet?producto=jovenes">Jóvenes</a>
                                     <ul>
-                                        <li><a href="">Camisas</a></li>
-                                        <li><a href="">Blusas</a></li>
-                                        <li><a href="">Shorts</a></li>
-                                        <li><a href="">Pantalones</a></li>
+                                        <li><a href="storeServlet?producto=camisas">Camisas</a></li>
+                                        <li><a href="storeServlet?producto=blusas">Blusas</a></li>
+                                        <li><a href="storeServlet?producto=shorts">Shorts</a></li>
+                                        <li><a href="storeServlet?producto=pantalones">Pantalones</a></li>
                                     </ul>
                                </li>
-                               <li><a href="">Niños</a></li>
+                               <li><a href="storeServlet?producto=ninos">Niños</a></li>
                             </ul>
                        </li>
-                       <li><a href="">Libros</a>
+                       <li><a href="storeServlet?producto=libros">Libros</a>
                             <ul>
-                               <li><a href="">Ficción</a></li>
-                               <li><a href="">Juvenil</a></li>
-                               <li><a href="">Adultos</a></li>
-                               <li><a href="">Niños</a></li>
+                               <li><a href="storeServlet?producto=ficcion">Ficción</a></li>
+                               <li><a href="storeServlet?producto=juvenil">Juvenil</a></li>
+                               <li><a href="storeServlet?producto=adultos">Adultos</a></li>
+                               <li><a href="storeServlet?producto=ninos">Niños</a></li>
                             </ul>
                        </li>
-                        <li><a href="">Hogar</a>
+                        <li><a href="storeServlet?producto=hogar">Hogar</a>
                             <ul>
-                               <li><a href="">Sala</a></li>
-                               <li><a href="">Cocina</a></li>
-                               <li><a href="">Dormitorio</a></li>
-                               <li><a href="">Jardín</a></li>
+                               <li><a href="storeServlet?producto=sala">Sala</a></li>
+                               <li><a href="storeServlet?producto=cocina">Cocina</a></li>
+                               <li><a href="storeServlet?producto=dormitorio">Dormitorio</a></li>
+                               <li><a href="storeServlet?producto=jardin">Jardín</a></li>
                             </ul>
                         </li>
                       </ul>
                      </li>
 
-
+                     <li><a href="storeServlet">Toda la tienda</a></li>
+                      <li><a href="storeServlet">Contactanos</a></li>
                     </ul>
                 </div>
                 
                     </td>
                 
                 <td colspan="3">
-                    <div style="width: 100%;">
+                    
+                    
+                    <form  action="storeServlet" method="get">
+                    
+                    <input style="    float: right;
+    height: 39px;
+    width: 61px;
+    margin-right: 23px; " type="submit" name="busqueda"value="Buscar">
+                    <div style="width: 82%;">
                     <i class="fas fa-search iconobuscador"></i>
-                    <input  type="email" class="form-control buscardorHome" id="exampleInputEmail22" ></div>
+                    <input style="    width: 100%;
+    padding-left: 46px;    height: 35px;"  type="text" class="form-control buscardorHome" name="producto" id="producto" >
+                    
+                    <input  type="hidden" class="formid" name="formid" id="formid" value="123456" >
+                    
+                   
+                    </div>
+                    </form>
                 </td>
                 </tr>
                 

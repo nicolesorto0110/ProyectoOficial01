@@ -3,9 +3,13 @@
     Created on : 03-22-2019, 10:17:21 AM
     Author     : Nicole
 --%>
-
+<%@page import="ProyectoLae.Objects.RegistroObject"%>
+<%@page import="ProyectoLae.Objects.carritoObjeto"%>
+<%@page import="java.util.Iterator"%>
+ 
+ <%@page import="ProyectoLae.Objects.StoreObjetos"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <jsp:include page="header.jsp" /> 
 
 
@@ -14,9 +18,7 @@
 <tbody>
 <tr>
     <td<!-- columna de checkout-->
-        
-        
-        
+  
         
    <table style="    width: 100%;
 ">
@@ -36,21 +38,43 @@
 
 
             </tr>
+            
+                    <%
+     
+         String nombreUsr = (String)request.getSession().getAttribute("nombreUsr");
+             String apellidoUser = (String)request.getSession().getAttribute("apellidoUser");
+                 String emailUser = (String)request.getSession().getAttribute("emailUser");
+                     String direccionUser = (String)request.getSession().getAttribute("direccionUser");
+                         String ciudadUser = (String)request.getSession().getAttribute("ciudadUser");
+                           String departamentoUser = (String)request.getSession().getAttribute("departamentoUser");
+        
+        if(nombreUsr!=null){
+        
+
+        
+        
+     
+        
+ 
+    %> 
+   
+            
+            
 <tr>
       <td><label>Nombres:</label> <br>
-          <input   type="text" id="nombres" name="nombres"/>
+          <input class="do"   type="text" id="nombres" name="nombres" value="<%=nombreUsr%>"/>
       </td>
       <td> <label>Apellidos:</label> <br>
-          <input type="text" id="apellidos" name="apellidos"/>
+          <input class="do" type="text" id="apellidos" name="apellidos" value="<%=apellidoUser %>"/>
       </td>
 </tr>
 
   <tr>
       <td><label>Email:</label> <br>
-            <input type="text" id="email" name="email"/>
+            <input class="do" type="text" id="email" name="email" value="<%= emailUser%>"/>
     </td>
-    <td><label>Telefono:</label><br>
-        <input type="text" id="telefono" name="telefono"/>
+    <td> 
+       
     </td>
  </tr>
 
@@ -59,7 +83,7 @@
 <tr>
     <td colspan="2">
         <label>Direccion Fisica:</label><br>
-        <input style="width: 446px;" type="text" id="direccionfisica" name="direccionfisica"/>
+        <input style="width: 446px;" type="text" id="direccionfisica" name="direccionfisica" value="<%= direccionUser %>"/>
         
     </td>
 </tr>
@@ -67,11 +91,11 @@
 <tr>
     <td>
         <label>Ciudad:</label><br>
-        <input type="text" id="ciudad" name="ciudad"/>
+        <input type="text" id="ciudad" name="ciudad" value="<%= ciudadUser %>"/>
     </td>
     <td>
         <label>Departamento;</label><br>
-        <input type="text" id="departamento" name="departamento"/>
+        <input type="text" id="departamento" name="departamento" value="<%= departamentoUser %>"/>
     </td>
 </tr>
 
@@ -150,6 +174,32 @@
     
     
 </tr>
+
+<%
+    }else{        
+
+%>
+
+<tr>
+    
+    <td  colspan="2">
+        
+        
+        <a href="InicioSesion.html">Ingresa aqui paa iniciar sesion</a>
+          <input class="do"   type="hidden" id="nombres" name="nombres" value=""/>
+          <input class="do" type="hidden" id="apellidos" name="apellidos" value=""/>
+      <input class="do" type="hidden" id="email" name="email" value=""/>
+      <input style="width: 446px;" type="hidden" id="direccionfisica" name="direccionfisica" value=""/>
+       <input type="hidden" id="ciudad" name="ciudad" value=""/>
+        <input type="hidden" id="departamento" name="departamento" value=""/>
+    </td>
+    
+</tr>
+<%
+}
+
+%>
+
 <tr>
     
     <td  colspan="2">
@@ -170,6 +220,8 @@
         </a>
     </td>
 </tr>
+
+
 </tbody>
 </table>
          
@@ -191,7 +243,7 @@
     //  String[] descripcion = request.getParameterValues("descripcion");
  //for (int i = 0; i < descripcion.length; i++) {
    //   out.print("<p>" + descripcion[i] + "</p>");
-   
+   //}
  
  
  
@@ -225,14 +277,14 @@
  for(i=0;i<cantidad;i++){
      
      
- cuerpo += "<tr><td><p>4</p></td><td  colspan='2'><p>"+checkoutDescription[i]+"</p></td><td><p  >$"+calculoItem(i)+"</p></td></tr>";
+ cuerpo += "<tr><td><p>"+checkoutCantidades[i]+"</p></td><td  colspan='2'><p>"+checkoutDescription[i]+"</p></td><td><p  >$"+calculoItem(i)+"</p></td></tr>";
      
      
      
     // alert(cuerpo);
      
- }
- cuerpo+="<tr><td>&nbsp;</td><td colspan='2'><p   style='      font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p >$"+totaleCarrito()+"</p></td></tr><tr><td colspan='4' style='text-align: center;'><a   class='procederBtn'>Proceder con la compra</a></td></tr></tbody></table>";
+ }<%  String iRows2 = (String)request.getSession().getAttribute("user");%>
+ cuerpo+="<tr><td>&nbsp;</td><td colspan='2'><p   style='      font-size: 22px;  float: right;'><strong>Total:</strong></p></td><td><p >$"+totaleCarrito()+"</p></td></tr><tr><td colspan='4' style='text-align: center;'><a onclick='agarralo2();'   class='procederBtn'>Proceder con la compra</a><form id='formCheckoutUltimo' action='Finalizado'><input type='hidden' id='sesion' name='sesion' value='<%= iRows2 %>'></input></form></td></tr></tbody></table>";
  document.getElementById("jeje").innerHTML = cuerpo;
    //alert(checkoutDescription);
 });

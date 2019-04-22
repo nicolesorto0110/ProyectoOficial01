@@ -1,47 +1,69 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package PoyectoLae.servlets;
 
+import PoyectoLae.logic.FinalLogic;
 import PoyectoLae.logic.StoreServlet;
 import ProyectoLae.Objects.StoreObjetos;
 import ProyectoLae.Objects.carritoObjeto;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "CheckoutServlet", urlPatterns = {"/CheckoutServlet"})
-public class CheckoutServlet extends HttpServlet 
-{
+/**
+ *
+ * @author Nicole
+ */
+@WebServlet(name = "Finalizado", urlPatterns = {"/Finalizado"})
+public class FinalizadoServlet extends HttpServlet {
 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException 
-    {
+            throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) 
-        {
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            FinalLogic CLogic = new FinalLogic();
             
-            
-            
-            
-            
-//int idd=logic.consultaIdUsername(strEmail);
-//int iRows2 = logic.insertNuevoRegistro2(idd, strNombres, strApellidos, strTelefono, strDireccionFisica, strCiudad, strDepartamento, strGenero, strFechaNacimiento);
+             StoreServlet CLogico = new StoreServlet();
+              ArrayList<carritoObjeto> carrito =CLogico.getAllCarrito();
+       
+        
+              
+             String idUsser = (String)request.getSession().getAttribute("user");  
+                   //   ArrayList<StoreObjetos> CArray = 
+             //   (ArrayList<StoreObjetos>)request.getSession().getAttribute("productos");
+             Iterator<carritoObjeto> iteArray = carrito.iterator();
+      
+              
+               carritoObjeto CTemp;
+                while(iteArray.hasNext())
+                {
+                    CTemp = iteArray.next();
+CLogic.insertNuevoRegistro(CTemp.getM_cantidad(), CTemp.getM_precio(),idUsser , CTemp.getId());   
                     
-              StoreServlet CLogic = new StoreServlet();
-      ArrayList<StoreObjetos> CArray =CLogic.getAllStore();
-                  request.getSession().setAttribute("productos", CArray);
-                                    // ArrayList<StoreObjetos> CArray =CLogic.getAllStore();
-                    ArrayList<carritoObjeto> carrito =CLogic.getAllCarrito();
-                  request.getSession().setAttribute("carritoo", carrito);
-                  
-                  
-                  
-                  
-                  
-            response.sendRedirect("checkout.jsp");//redireccion
+                }
+                CLogic.borrarTodo();
+                 response.sendRedirect("compra_completada.jsp");
+                
+                   // CLogic.insertNuevoRegistro(cantidad, precio, idUsuario, id);
         }
     }
 

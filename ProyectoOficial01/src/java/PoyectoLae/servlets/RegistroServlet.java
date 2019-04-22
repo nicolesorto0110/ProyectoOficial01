@@ -39,7 +39,7 @@ public class RegistroServlet extends HttpServlet {
             String strDepartamento = request.getParameter("departamento");
             
       
-            String strFechaNacimiento = strAno+"-"+strMes+"-"+strDias;
+            String strFechaNacimiento = "2018-12-1";//strAno+"-"+strMes+"-"+strDias;
             
             RegistroLogic logic = new RegistroLogic();
             int iRows = logic.insertNuevoRegistro(strUsername, strContrasena, strEmail);
@@ -47,15 +47,8 @@ public class RegistroServlet extends HttpServlet {
             int idd=logic.consultaIdUsername(strEmail);
             int iRows2 = logic.insertNuevoRegistro2(idd, strNombres, strApellidos, strTelefono, strDireccionFisica, strCiudad, strDepartamento, strGenero, strFechaNacimiento);
                             
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet RegistroServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet RegistroServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+       request.getSession().setAttribute("user", strEmail);
+              response.sendRedirect("index.jsp");
         }
     }
 

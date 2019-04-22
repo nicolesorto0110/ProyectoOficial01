@@ -12,9 +12,12 @@ public class RegistroObject {
     private int m_iBirthDay;
     private String m_strContrasena;
     private String m_strConfirm;
+        private String direccion;
+    private String ciudad;
+       private String departamento;
     
     
-    public RegistroObject(String p_strNombre, String p_strApellido, String p_strEmail, String p_strGenero, int p_iBirthYear, int p_iBirthmonth, int p_iBirthDay, String p_strContrasena, String p_strConfirm) {
+    public RegistroObject(String p_strNombre, String p_strApellido, String p_strEmail, String p_strGenero, int p_iBirthYear, int p_iBirthmonth, int p_iBirthDay, String p_strContrasena, String p_strConfirm,String direccion, String ciudad, String departamento) {
         setNombre(p_strNombre);
         setApellido(p_strApellido);
         setEmail(p_strEmail);
@@ -24,10 +27,40 @@ public class RegistroObject {
         setBirthDay(p_iBirthDay);
         setContrasena(p_strContrasena);
         setConfirm(p_strConfirm);
+        setCiudad(ciudad);
+        setDepartamento(departamento);
+        setDireccion(direccion);
         
     
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    
+    
+    
     public String getNombre() {
         return m_strNombre;
     }

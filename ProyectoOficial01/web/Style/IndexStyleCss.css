@@ -104,7 +104,7 @@ float: left;
 /*******************Fin menu***********/
 
 
-input[type=text],input[type=password], input[type=number]
+input[type=password], input[type=number]
 {
     background-color: white;
     color:black;
@@ -271,3 +271,4 @@ select{
 	position:relative;
 	top:1px;
 }
+
